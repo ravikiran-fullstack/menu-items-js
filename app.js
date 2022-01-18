@@ -85,15 +85,26 @@ const menuItemsHtml = document.querySelector(".menu-items");
 const btnContainer = document.querySelector(".btn-container");
 
 function generateCategoryBtns() {
+  // const filteredBtns = menu.reduce(
+  //   function (values, item) {
+  //     if (!values.includes(item.category)) {
+  //       values.push(item.category);
+  //     }
+  //     return values;
+  //   },
+  //   ["all"]
+  // );
+
+  console.log(filteredBtns);
+
   const categories = menu.map(function (item) {
     return item.category;
   });
-  console.log(categories);
+
   categories.unshift("all");
   const uniqueCategoriesSet = new Set(categories);
-  console.log(uniqueCategoriesSet);
+
   const uniqueCategoriesArray = [...uniqueCategoriesSet];
-  console.log(uniqueCategoriesArray);
 
   let displayBtns = uniqueCategoriesArray.map(function (category) {
     return ` <button class="btn ${category}">${category}</button>`;
